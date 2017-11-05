@@ -7,6 +7,7 @@
 
 usage:
 
+```
 $ gcc main.c matrix.c -std=c99 -o main
 $ ./main
 Enter number of rows of MatA: 3
@@ -46,3 +47,4 @@ Select operation +,- or *:
 (    -9   33  -13   )
 (   -21  -12  -22   )
 (    12  -19   18   )
+```
