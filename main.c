@@ -29,7 +29,6 @@ MATRIX generateMat(int row, int col, int arr[row][col]){
 }
 
 int main(void){
-
 	
 	int rcA[2];
 	int rcB[2];
