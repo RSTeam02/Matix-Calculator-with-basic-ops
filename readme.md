@@ -1,6 +1,6 @@
 # Matrix Calculator with basic operations (+,-,*)
 
-+ update: preview values from a00 to aRC, input validation => check if integer and right operation entered 
++ update: print preview from a00 to aRC, input validation => check if integer and right operation entered 
 + basic operation of 2x matrices (MatResult = MatA operation MatB)
 + struct definition for creating a Matrix type, eg. MATRIX matA 
 + enter number of rows/columns, values of a matrix (a00, a01...aRC)
