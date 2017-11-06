@@ -49,6 +49,7 @@ int main(void){
         }        
     }    
     
+    printPreview(rcA[0], rcA[1]);
     int matA[rcA[0]][rcA[1]];
 
     printf("Enter Matrix values:\n");
@@ -76,7 +77,7 @@ int main(void){
             goto RCB;                
         }        
     }    
-    
+    printPreview(rcB[0], rcB[1]);
     int matB[rcB[0]][rcB[1]];
 
     printf("Enter Matrix values:\n");

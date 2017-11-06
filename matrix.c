@@ -25,6 +25,19 @@ void printRes(MATRIX result){
 
 }
 
+void printPreview(int row, int col){	
+
+    for(int r = 0; r <row; r++){
+        printf("( ");
+        for(int c = 0; c < col; c++){
+            printf("a%d%d ", r,c);
+        }        
+        printf(")\n");
+    }
+    printf("\n");
+
+}
+
 MATRIX matrixMult(MATRIX matA, MATRIX matB){
 
     //required: cols of A === rows of B

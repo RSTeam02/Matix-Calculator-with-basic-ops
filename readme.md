@@ -1,6 +1,6 @@
 # Matrix Calculator with basic operations (+,-,*)
 
-+ update: input validation => check if integer and right operation entered 
++ update: preview values from a00 to aRC, input validation => check if integer and right operation entered 
 + basic operation of 2x matrices (MatResult = MatA operation MatB)
 + struct definition for creating a Matrix type, eg. MATRIX matA 
 + enter number of rows/columns, values of a matrix (a00, a01...aRC)
@@ -11,41 +11,40 @@ usage:
 ```
 $ gcc main.c matrix.c -std=c99 -o main
 $ ./main
-Enter number of rows of MatA: 3
+Enter number of rows of MatA: 2
 Enter number of columns of MatA: 3
+( a00 a01 a02 )
+( a10 a11 a12 )
+
 Enter Matrix values:
-a00: 23
-a01: 45
-a02: 32
-a10: 11
-a11: 33
-a12: 44
-a20: 55
-a21: 3
-a22: 21
-(    23   45   32   )
-(    11   33   44   )
-(    55    3   21   )
+a00: 4
+a01: 6
+a02: 3
+a10: 1
+a11: 8
+a12: 9
+(     4    6    3   )
+(     1    8    9   )
 
 Enter number of rows of MatB: 3
-Enter number of columns of MatB: 3
-Enter Matrix values:
-a00: 32
-a01: 12
-a02: 45
-a10: 32
-a11: 45
-a12: 66
-a20: 43
-a21: 22
-a22: 3
-(    32   12   45   )
-(    32   45   66   )
-(    43   22    3   )
+Enter number of columns of MatB: 2
+( a00 a01 )
+( a10 a11 )
+( a20 a21 )
 
-Select operation +,- or *:
--
-(    -9   33  -13   )
-(   -21  -12  -22   )
-(    12  -19   18   )
+Enter Matrix values:
+a00: 8
+a01: 9
+a10: 0
+a11: 5
+a20: 3
+a21: 4
+(     8    9   )
+(     0    5   )
+(     3    4   )
+
+Select operation +,- or *: *
+Result:
+(    41   78   )
+(    35   85   )
 ```
