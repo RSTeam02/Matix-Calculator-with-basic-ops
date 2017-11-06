@@ -13,7 +13,7 @@
 #include "matrix.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdbool.h>
 
 MATRIX generateMat(int row, int col, int arr[row][col]){
     struct MATRIX arr2d;
@@ -42,7 +42,7 @@ int main(void){
     RCA: 
     for(int i =0; i < sizeof(rcA)/sizeof(rcA[0]); i++){
         printf("Enter number of %s of MatA: ", rcInfo[i]);        
-        if (scanf("%d", &rcA[i]) != 1){ //every integer input has a length of 1, a char input 2, including \n termination
+        if (scanf("%d", &rcA[i]) != true){ //every integer is true (1), a char input false (0), including \n termination
             printf("not an integer, repeat input row/col\n");
             while(getchar() != '\n'); //clear scanf input
             goto RCA; //repeat and goto label on top                
@@ -56,7 +56,7 @@ int main(void){
     for(int i =0; i < rcA[0]; i++){
         for(int j =0; j < rcA[1]; j++){
             printf("a%d%d: ", i,j);			
-            if (scanf("%d", &matA[i][j]) != 1){
+            if (scanf("%d", &matA[i][j]) != true){
                 printf("not an integer, repeat input values\n");
                 while(getchar() != '\n');
                 goto MATA_INPUT;                
@@ -70,7 +70,7 @@ int main(void){
     RCB: 
     for(int i =0; i < sizeof(rcB)/sizeof(rcB[0]); i++){
         printf("Enter number of %s of MatB: ", rcInfo[i]);        
-        if (scanf("%d", &rcB[i]) != 1){
+        if (scanf("%d", &rcB[i]) != true){
             printf("not an integer, repeat input row/col\n");
             while(getchar() != '\n');
             goto RCB;                
@@ -83,10 +83,8 @@ int main(void){
     MATB_INPUT:
     for(int i =0; i < rcB[0]; i++){
         for(int j =0; j < rcB[1]; j++){
-            printf("a%d%d: ", i,j);
-            int input = scanf("%d", &matB[i][j]);       
-            if (input != 1){
-                
+            printf("a%d%d: ", i,j);                  
+            if (scanf("%d", &matB[i][j]) != true){                
                 printf("not an integer, repeat input values\n");
                 while(getchar() != '\n');
                 goto MATB_INPUT;                
