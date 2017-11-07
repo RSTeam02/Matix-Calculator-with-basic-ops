@@ -1,5 +1,6 @@
 # Matrix Calculator with basic operations (+,-,*)
 
++ 7.11: input validation without goto, repeat only last input (arrays)
 + update: print preview from a00 to aRC, input validation => check if integer and right operation entered 
 + basic operation of 2x matrices (MatResult = MatA operation MatB)
 + struct definition for creating a Matrix type, eg. MATRIX matA 
@@ -17,34 +18,41 @@ Enter number of columns of MatA: 3
 ( a10 a11 a12 )
 
 Enter Matrix values:
-a00: 4
-a01: 6
-a02: 3
-a10: 1
-a11: 8
+a00: 5
+a01: 8
+a02: 53
+a10: 5
+a11: 0
 a12: 9
-(     4    6    3   )
-(     1    8    9   )
+(     5    8   53   )
+(     5    0    9   )
 
-Enter number of rows of MatB: 3
-Enter number of columns of MatB: 2
+Enter number of rows of MatA: 3
+Enter number of columns of MatA: 
+h
+not an integer, repeat input columns
+2
 ( a00 a01 )
 ( a10 a11 )
 ( a20 a21 )
 
 Enter Matrix values:
-a00: 8
-a01: 9
-a10: 0
-a11: 5
-a20: 3
-a21: 4
-(     8    9   )
-(     0    5   )
-(     3    4   )
+a00: 6
+a01: 3
+a10: 8
+a11: v
+not an integer, repeat input
+a11: 3
+a20: 7
+a21: 9
+(     6    3   )
+(     8    3   )
+(     7    9   )
 
+Select operation +,- or *: ,
+invalid operation
 Select operation +,- or *: *
 Result:
-(    41   78   )
-(    35   85   )
+(   465  516   )
+(    93   96   )
 ```

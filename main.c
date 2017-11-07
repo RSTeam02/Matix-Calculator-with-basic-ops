@@ -39,64 +39,76 @@ int main(void){
     MATRIX matResStruct;
     char op;	
     
-    RCA: 
+    
     for(int i =0; i < sizeof(rcA)/sizeof(rcA[0]); i++){
-        printf("Enter number of %s of MatA: ", rcInfo[i]);        
-        if (scanf("%d", &rcA[i]) != true){ //every integer is true (1), a char input false (0), including \n termination
-            printf("not an integer, repeat input row/col\n");
-            while(getchar() != '\n'); //clear scanf input
-            goto RCA; //repeat and goto label on top                
-        }        
+        printf("Enter number of %s of MatA: ", rcInfo[i]);       
+        do{ 
+            if (scanf("%d", &rcA[i]) != true){ //every integer is true (1), a char input false (0), including \n termination
+                printf("not an integer, repeat input %s\n", rcInfo[i]);
+                while(getchar() != '\n'); //clear scanf input                                      
+            }else{
+                break;
+            }
+        }while(1);        
     }    
     
     printPreview(rcA[0], rcA[1]);
     int matA[rcA[0]][rcA[1]];
 
     printf("Enter Matrix values:\n");
-    MATA_INPUT:
+  
     for(int i =0; i < rcA[0]; i++){
         for(int j =0; j < rcA[1]; j++){
-            printf("a%d%d: ", i,j);			
-            if (scanf("%d", &matA[i][j]) != true){
-                printf("not an integer, repeat input values\n");
-                while(getchar() != '\n');
-                goto MATA_INPUT;                
-            }           			
+            printf("a%d%d: ", i,j);
+            do{			
+                if (scanf("%d", &matA[i][j]) != true){
+                    printf("not an integer, repeat input\na%d%d: ", i, j);
+                    while(getchar() != '\n');                                
+                }else{
+                    break;
+                }
+            }while(1);           			
         }
     }
 
     matAStruct = generateMat(rcA[0], rcA[1], matA);
     printRes(matAStruct);
 
-    RCB: 
     for(int i =0; i < sizeof(rcB)/sizeof(rcB[0]); i++){
-        printf("Enter number of %s of MatB: ", rcInfo[i]);        
-        if (scanf("%d", &rcB[i]) != true){
-            printf("not an integer, repeat input row/col\n");
-            while(getchar() != '\n');
-            goto RCB;                
-        }        
-    }    
+        printf("Enter number of %s of MatA: ", rcInfo[i]);       
+        do{ 
+            if (scanf("%d", &rcB[i]) != true){ 
+                printf("not an integer, repeat input %s\n", rcInfo[i]);
+                while(getchar() != '\n');                                   
+            }else{
+                break;
+            }
+        }while(1);        
+    }
+
     printPreview(rcB[0], rcB[1]);
     int matB[rcB[0]][rcB[1]];
 
     printf("Enter Matrix values:\n");
-    MATB_INPUT:
+    
     for(int i =0; i < rcB[0]; i++){
         for(int j =0; j < rcB[1]; j++){
             printf("a%d%d: ", i,j);                  
-            if (scanf("%d", &matB[i][j]) != true){                
-                printf("not an integer, repeat input values\n");
-                while(getchar() != '\n');
-                goto MATB_INPUT;                
-            }      			
+            do{			
+                if (scanf("%d", &matB[i][j]) != true){
+                    printf("not an integer, repeat input\na%d%d: ", i, j);
+                    while(getchar() != '\n');                                
+                }else{
+                    break;
+                }
+            }while(1);   			
         }
     }
 
     matBStruct = generateMat(rcB[0], rcB[1], matB);	
     printRes(matBStruct);
 
-    OP: do{
+    do{
         printf("Select operation +,- or *: ");	
         scanf("\n%c", &op);
         if(op == '+' || op == '-' || op == '*'){
@@ -111,8 +123,7 @@ int main(void){
             printRes(matResStruct);
             break; //if input succeeded leave loop
         }else{
-            printf("invalid operation\n");
-            goto OP; //repeat, if input is not +,-, or *
+            printf("invalid operation\n");            
         }
     }while(1);
      
